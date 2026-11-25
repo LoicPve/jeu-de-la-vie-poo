@@ -1,0 +1,18 @@
+# Fichiers de compilation C/C++
+build/
+*.o
+*.obj
+*.exe
+*.out
+jeu_de_la_vie/jeu_de_la_vie
+GUI-SFML/main
+GUI-SFML/main-debug
+
+# Dossiers de sortie generes en mode console
+*_out/
+
+# IDE / OS
+.vscode/
+.ccls-cache/
+.DS_Store
+Thumbs.db

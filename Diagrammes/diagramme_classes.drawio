@@ -1,0 +1,278 @@
+<mxfile host="app.diagrams.net" modified="2026-11-21T15:40:00.000Z" agent="Antigravity" version="24.7.17" type="device">
+  <diagram id="diagramme-classes-jdlv" name="Diagramme de Classes - Jeu de la Vie">
+    <mxGraphModel dx="1900" dy="1250" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1250" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ==================== AfficheurGraphique ==================== -->
+        <mxCell id="cls-afficheur" value="AfficheurGraphique" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="440" height="148" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-afficheur-attr" value="- m_tailleCellule : int&lt;br&gt;- m_delaiMs : int&lt;br&gt;- m_enPause : bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-afficheur">
+          <mxGeometry y="28" width="440" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-afficheur-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1" parent="cls-afficheur">
+          <mxGeometry y="90" width="440" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-afficheur-meth" value="+ AfficheurGraphique(tailleCellule : int = 15, delaiMs : int = 100)&lt;br&gt;+ lancer(jeu : Jeu&amp;amp;) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-afficheur">
+          <mxGeometry y="98" width="440" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== Jeu ==================== -->
+        <mxCell id="cls-jeu" value="Jeu" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="40" width="580" height="238" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-jeu-attr" value="- m_grille : Grille&lt;br&gt;- m_regle : Regle*&lt;br&gt;- m_nbIterationsMax : int&lt;br&gt;- m_cheminFichierEntree : std::string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-jeu">
+          <mxGeometry y="28" width="580" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-jeu-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1" parent="cls-jeu">
+          <mxGeometry y="110" width="580" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-jeu-meth" value="+ Jeu(cheminEntree : const std::string&amp;amp;, regle : Regle*, nbIterMax : int, torique : bool = false)&lt;br&gt;+ ~Jeu()&lt;br&gt;+ getGrille() const : const Grille&amp;amp;&lt;br&gt;+ avancerIteration() : bool&lt;br&gt;+ lancerModeConsole() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-jeu">
+          <mxGeometry y="118" width="580" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== Regle (abstraite) ==================== -->
+        <mxCell id="cls-regle" value="«abstract»&lt;br&gt;&lt;i&gt;Regle&lt;/i&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="55" width="590" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-regle-attr" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-regle">
+          <mxGeometry y="42" width="590" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-regle-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1" parent="cls-regle">
+          <mxGeometry y="60" width="590" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-regle-meth" value="&lt;i&gt;+ ~Regle()&lt;/i&gt;&lt;br&gt;&lt;i&gt;+ calculerProchainEtat(etatActuel : const EtatCellule&amp;amp;, nbVoisinsVivants : int) const : EtatCellule* = 0&lt;/i&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-regle">
+          <mxGeometry y="68" width="590" height="62" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== RegleConway ==================== -->
+        <mxCell id="cls-regleconway" value="RegleConway" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="290" width="590" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-regleconway-attr" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-regleconway">
+          <mxGeometry y="28" width="590" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-regleconway-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1" parent="cls-regleconway">
+          <mxGeometry y="46" width="590" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-regleconway-meth" value="+ calculerProchainEtat(etatActuel : const EtatCellule&amp;amp;, nbVoisinsVivants : int) const : EtatCellule*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-regleconway">
+          <mxGeometry y="54" width="590" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== Grille ==================== -->
+        <mxCell id="cls-grille" value="Grille" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="360" width="540" height="376" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-grille-attr" value="- m_lignes : int&lt;br&gt;- m_colonnes : int&lt;br&gt;- m_torique : bool&lt;br&gt;- m_cellules : std::vector&amp;lt;std::vector&amp;lt;Cellule&amp;gt;&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-grille">
+          <mxGeometry y="28" width="540" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-grille-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1" parent="cls-grille">
+          <mxGeometry y="110" width="540" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-grille-meth" value="+ Grille(lignes : int = 0, colonnes : int = 0, torique : bool = false)&lt;br&gt;+ getLignes() const : int&lt;br&gt;+ getColonnes() const : int&lt;br&gt;+ estTorique() const : bool&lt;br&gt;+ setTorique(torique : bool) : void&lt;br&gt;+ getCellule(ligne : int, colonne : int) const : const Cellule&amp;amp;&lt;br&gt;+ setEtatCellule(ligne : int, colonne : int, nouvelEtat : EtatCellule*) : void&lt;br&gt;+ compterVoisinsVivants(ligne : int, colonne : int) const : int&lt;br&gt;+ actualiser(regle : const Regle&amp;amp;) : bool&lt;br&gt;+ estEgale(autre : const Grille&amp;amp;) const : bool&lt;br&gt;+ chargerDepuisFichier(chemin : const std::string&amp;amp;) : bool&lt;br&gt;+ sauvegarderDansFichier(chemin : const std::string&amp;amp;) const : bool&lt;br&gt;+ afficherConsole() const : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-grille">
+          <mxGeometry y="118" width="540" height="258" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== Cellule ==================== -->
+        <mxCell id="cls-cellule" value="Cellule" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="420" width="340" height="232" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-cellule-attr" value="- m_etat : EtatCellule*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-cellule">
+          <mxGeometry y="28" width="340" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-cellule-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1" parent="cls-cellule">
+          <mxGeometry y="60" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-cellule-meth" value="+ Cellule()&lt;br&gt;+ Cellule(etat : EtatCellule*)&lt;br&gt;+ Cellule(autre : const Cellule&amp;amp;)&lt;br&gt;+ operator=(autre : const Cellule&amp;amp;) : Cellule&amp;amp;&lt;br&gt;+ ~Cellule()&lt;br&gt;+ estVivante() const : bool&lt;br&gt;+ getEtat() const : const EtatCellule&amp;amp;&lt;br&gt;+ setEtat(nouvelEtat : EtatCellule*) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-cellule">
+          <mxGeometry y="68" width="340" height="164" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== EtatCellule (abstraite) ==================== -->
+        <mxCell id="cls-etatcellule" value="«abstract»&lt;br&gt;&lt;i&gt;EtatCellule&lt;/i&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="750" width="300" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatcellule-attr" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-etatcellule">
+          <mxGeometry y="42" width="300" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatcellule-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1" parent="cls-etatcellule">
+          <mxGeometry y="60" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatcellule-meth" value="&lt;i&gt;+ ~EtatCellule()&lt;/i&gt;&lt;br&gt;&lt;i&gt;+ estVivante() const : bool = 0&lt;/i&gt;&lt;br&gt;+ estObstacle() const : bool&lt;br&gt;&lt;i&gt;+ cloner() const : EtatCellule* = 0&lt;/i&gt;&lt;br&gt;&lt;i&gt;+ versCaractere() const : char = 0&lt;/i&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-etatcellule">
+          <mxGeometry y="68" width="300" height="104" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== EtatVivant ==================== -->
+        <mxCell id="cls-etatvivant" value="EtatVivant" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1020" width="230" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatvivant-attr" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-etatvivant">
+          <mxGeometry y="28" width="230" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatvivant-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1" parent="cls-etatvivant">
+          <mxGeometry y="46" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatvivant-meth" value="+ estVivante() const : bool&lt;br&gt;+ cloner() const : EtatCellule*&lt;br&gt;+ versCaractere() const : char" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-etatvivant">
+          <mxGeometry y="54" width="230" height="68" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== EtatMort ==================== -->
+        <mxCell id="cls-etatmort" value="EtatMort" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1020" width="230" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatmort-attr" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-etatmort">
+          <mxGeometry y="28" width="230" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatmort-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1" parent="cls-etatmort">
+          <mxGeometry y="46" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatmort-meth" value="+ estVivante() const : bool&lt;br&gt;+ cloner() const : EtatCellule*&lt;br&gt;+ versCaractere() const : char" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-etatmort">
+          <mxGeometry y="54" width="230" height="68" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== EtatObstacle (Bonus) ==================== -->
+        <mxCell id="cls-etatobstacle" value="«Bonus»&lt;br&gt;EtatObstacle" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1020" width="270" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatobstacle-attr" value="- m_vivante : bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-etatobstacle">
+          <mxGeometry y="42" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatobstacle-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1" parent="cls-etatobstacle">
+          <mxGeometry y="72" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-etatobstacle-meth" value="+ EtatObstacle(vivante : bool)&lt;br&gt;+ estVivante() const : bool&lt;br&gt;+ estObstacle() const : bool&lt;br&gt;+ cloner() const : EtatCellule*&lt;br&gt;+ versCaractere() const : char" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="cls-etatobstacle">
+          <mxGeometry y="80" width="270" height="104" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== Légende UML ==================== -->
+        <mxCell id="note-legende" value="&lt;b&gt;Légende UML &amp;amp; Architecture POO&lt;/b&gt;&lt;br&gt;&lt;br&gt;• &lt;b&gt;Violet («abstract»)&lt;/b&gt; : Classe abstraite / contrat polymorphique&lt;br&gt;• &lt;b&gt;Bleu&lt;/b&gt; : Classe concrète du cœur MVP&lt;br&gt;• &lt;b&gt;Jaune («Bonus»)&lt;/b&gt; : Extension (cellule obstacle)&lt;br&gt;• &lt;b&gt;Losange plein (◆)&lt;/b&gt; : Composition (durée de vie liée)&lt;br&gt;• &lt;b&gt;Losange vide (◇)&lt;/b&gt; : Agrégation (règle injectable / Strategy)&lt;br&gt;• &lt;b&gt;Flèche triangle vide (▷)&lt;/b&gt; : Héritage / Spécialisation&lt;br&gt;• &lt;b&gt;Flèche pointillée (- - &amp;gt;)&lt;/b&gt; : Dépendance d'utilisation" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;align=left;verticalAlign=top;spacing=10;size=18;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="470" width="440" height="190" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== RELATIONS UML ==================== -->
+
+        <!-- Dépendance : AfficheurGraphique vers Jeu -->
+        <mxCell id="edge-dep-aff-jeu" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=6 4;endArrow=open;endFill=0;endSize=10;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.395;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-afficheur" target="cls-jeu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-dep-aff-jeu" value="affiche et pilote" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-dep-aff-jeu">
+          <mxGeometry x="0" y="-14" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Agrégation : Jeu vers 1 Regle -->
+        <mxCell id="edge-agreg-jeu-regle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamondThin;startFill=0;startSize=14;endArrow=open;endFill=0;endSize=10;strokeWidth=1.5;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.346;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-jeu" target="cls-regle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-agreg-jeu-regle" value="applique" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-agreg-jeu-regle">
+          <mxGeometry x="0" y="-14" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="card-agreg-jeu-regle" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-agreg-jeu-regle">
+          <mxGeometry x="0.72" y="14" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Composition : Jeu vers 1 Grille -->
+        <mxCell id="edge-comp-jeu-grille" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamondThin;startFill=1;startSize=14;endArrow=open;endFill=0;endSize=10;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-jeu" target="cls-grille">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-comp-jeu-grille" value="gère" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-comp-jeu-grille">
+          <mxGeometry x="0" y="-22" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="card-comp-jeu-grille" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-comp-jeu-grille">
+          <mxGeometry x="0.65" y="14" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Dépendance : Grille vers Regle -->
+        <mxCell id="edge-dep-grille-regle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=6 4;endArrow=open;endFill=0;endSize=10;strokeWidth=1.5;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.746;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-grille" target="cls-regle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1195" y="454" />
+              <mxPoint x="1195" y="152" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl-dep-grille-regle" value="utilise" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-dep-grille-regle">
+          <mxGeometry x="-0.05" y="-22" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Héritage : RegleConway hérite de Regle -->
+        <mxCell id="edge-herit-conway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;strokeWidth=1.5;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-regleconway" target="cls-regle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Composition : Grille vers 1..* Cellule -->
+        <mxCell id="edge-comp-grille-cell" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamondThin;startFill=1;startSize=14;endArrow=open;endFill=0;endSize=10;strokeWidth=1.5;exitX=0;exitY=0.468;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-grille" target="cls-cellule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-comp-grille-cell" value="compose" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-comp-grille-cell">
+          <mxGeometry x="0" y="-14" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="card-comp-grille-cell" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-comp-grille-cell">
+          <mxGeometry x="0.72" y="14" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Composition : Cellule vers 1 EtatCellule -->
+        <mxCell id="edge-comp-cell-etat" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamondThin;startFill=1;startSize=14;endArrow=open;endFill=0;endSize=10;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-cellule" target="cls-etatcellule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-comp-cell-etat" value="possède" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-comp-cell-etat">
+          <mxGeometry x="0" y="-26" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="card-comp-cell-etat" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="edge-comp-cell-etat">
+          <mxGeometry x="0.65" y="14" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Héritage : EtatVivant hérite de EtatCellule -->
+        <mxCell id="edge-herit-vivant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;strokeWidth=1.5;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-etatvivant" target="cls-etatcellule">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="135" y="970" />
+              <mxPoint x="250" y="970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Héritage : EtatMort hérite de EtatCellule -->
+        <mxCell id="edge-herit-mort" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;strokeWidth=1.5;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-etatmort" target="cls-etatcellule">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="395" y="970" />
+              <mxPoint x="250" y="970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Héritage : EtatObstacle hérite de EtatCellule -->
+        <mxCell id="edge-herit-obstacle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;strokeWidth=1.5;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="cls-etatobstacle" target="cls-etatcellule">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="675" y="970" />
+              <mxPoint x="250" y="970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

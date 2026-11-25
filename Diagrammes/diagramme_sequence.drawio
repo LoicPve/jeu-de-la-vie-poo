@@ -1,0 +1,326 @@
+<mxfile host="app.diagrams.net" modified="2026-11-24T16:54:00.000Z" agent="Antigravity" version="24.7.17" type="device">
+  <diagram id="diagramme-sequence-jdlv" name="Diagramme de Séquence - Jeu de la Vie">
+    <mxGraphModel dx="2100" dy="1460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2100" pageHeight="1460" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ==================== FRAGMENTS COMBINÉS UML (en arrière-plan) ==================== -->
+        <mxCell id="frag-alt" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=60;height=26;fillColor=none;strokeColor=#666666;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="335" width="1970" height="965" as="geometry" />
+        </mxCell>
+        <mxCell id="frag-alt-g1" value="&lt;b&gt;[mode == Console]&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="130" y="340" width="130" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="frag-alt-sep" value="" style="line;strokeWidth=1.5;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="895" width="1970" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="frag-alt-g2" value="&lt;b&gt;[mode == Graphique SFML]&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="75" y="908" width="180" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Boucle Mode Console -->
+        <mxCell id="frag-loop-console" value="loop" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=60;height=24;fillColor=none;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="480" y="455" width="1270" height="432" as="geometry" />
+        </mxCell>
+        <mxCell id="frag-loop-console-g" value="&lt;b&gt;[i &amp;lt; m_nbIterationsMax &amp;amp;&amp;amp; aEvolue]&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="550" y="456" width="260" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Boucle sur chaque cellule dans Grille::actualiser -->
+        <mxCell id="frag-loop-cells" value="loop" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=60;height=22;fillColor=none;strokeColor=#9673a6;dashed=1;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="570" width="965" height="228" as="geometry" />
+        </mxCell>
+        <mxCell id="frag-loop-cells-g" value="&lt;b&gt;[pour chaque cellule (l, c)]&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="830" y="570" width="180" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Option sauvegarde si la grille a évolué -->
+        <mxCell id="frag-opt-save" value="opt" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=50;height=20;fillColor=none;strokeColor=#d6b656;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="505" y="830" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="frag-opt-save-g" value="&lt;b&gt;[aEvolue == true]&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="562" y="830" width="120" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Boucle Mode Graphique SFML -->
+        <mxCell id="frag-loop-gui" value="loop" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=60;height=24;fillColor=none;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="75" y="995" width="1930" height="292" as="geometry" />
+        </mxCell>
+        <mxCell id="frag-loop-gui-g" value="&lt;b&gt;[tant que fenetre.isOpen()]&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="145" y="996" width="180" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Option si pas en pause -->
+        <mxCell id="frag-opt-pause" value="opt" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=50;height=22;fillColor=none;strokeColor=#d6b656;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1062" width="1470" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="frag-opt-pause-g" value="&lt;b&gt;[!m_enPause]&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1062" width="100" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LIGNES DE VIE (PARTICIPANTS) ==================== -->
+        <mxCell id="ll-user" value="Utilisateur" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=46;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="ll-main" value=": main" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=46;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="120" height="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="ll-jeu" value="jeu : Jeu" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=46;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="490" y="40" width="130" height="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="ll-grille" value="grille : Grille" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=46;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="40" width="130" height="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="ll-cellule" value="cellule : Cellule" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=46;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="40" width="130" height="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="ll-regle" value="regle : RegleConway&lt;br&gt;&lt;i&gt;(Regle)&lt;/i&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=46;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="40" width="150" height="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="ll-etat" value="etat : EtatCellule&lt;br&gt;&lt;i&gt;(Vivant/Mort/Obstacle)&lt;/i&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=46;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1590" y="40" width="150" height="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="ll-aff" value="afficheur : AfficheurGraphique" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=46;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="40" width="180" height="1360" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== MESSAGES PHASE 1 : INITIALISATION ==================== -->
+        <mxCell id="msg-1" value="1: lancer(cheminFichier, mode, nbIterMax, torique)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="125" as="sourcePoint" />
+            <mxPoint x="300" y="125" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-2" value="2: «create» new RegleConway()" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="160" as="sourcePoint" />
+            <mxPoint x="1395" y="160" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-3" value="3: Jeu(cheminFichier, regle, nbIterMax, torique)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="195" as="sourcePoint" />
+            <mxPoint x="555" y="195" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-4" value="4: chargerDepuisFichier(cheminFichier)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="230" as="sourcePoint" />
+            <mxPoint x="825" y="230" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-5" value="5: setEtat(new EtatVivant() / new EtatMort())" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="265" as="sourcePoint" />
+            <mxPoint x="1105" y="265" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-6" value="6: true (grille chargée)" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="300" as="sourcePoint" />
+            <mxPoint x="555" y="300" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ==================== MESSAGES BRANCHE CONSOLE ==================== -->
+        <mxCell id="msg-7" value="7: lancerModeConsole()" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="395" as="sourcePoint" />
+            <mxPoint x="555" y="395" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-8" value="8: sauvegarderDansFichier(&quot;&amp;lt;nom&amp;gt;_out/iteration_0.txt&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="430" as="sourcePoint" />
+            <mxPoint x="825" y="430" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Auto-appel Jeu::avancerIteration -->
+        <mxCell id="msg-9" value="9: avancerIteration()" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;html=1;align=left;verticalAlign=middle;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry x="0.1" y="10" relative="1" as="geometry">
+            <mxPoint x="555" y="502" as="sourcePoint" />
+            <mxPoint x="555" y="524" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="605" y="513" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-10" value="10: actualiser(*m_regle)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="550" as="sourcePoint" />
+            <mxPoint x="825" y="550" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Auto-appel Grille::compterVoisinsVivants -->
+        <mxCell id="msg-11" value="11: nbVoisins = compterVoisinsVivants(l, c)" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;html=1;align=left;verticalAlign=middle;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry x="0.1" y="10" relative="1" as="geometry">
+            <mxPoint x="825" y="608" as="sourcePoint" />
+            <mxPoint x="825" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="875" y="619" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-12" value="12: getEtat()" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="655" as="sourcePoint" />
+            <mxPoint x="1105" y="655" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-13" value="13: etatActuel (const EtatCellule&amp;amp;)" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1105" y="680" as="sourcePoint" />
+            <mxPoint x="825" y="680" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-14" value="14: calculerProchainEtat(etatActuel, nbVoisins)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#9673a6;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="710" as="sourcePoint" />
+            <mxPoint x="1395" y="710" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-15" value="15: estObstacle() / estVivante() / cloner()" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#9673a6;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1395" y="736" as="sourcePoint" />
+            <mxPoint x="1665" y="736" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-16" value="16: nouvelEtat (EtatCellule*)" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=1.5;strokeColor=#9673a6;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1395" y="762" as="sourcePoint" />
+            <mxPoint x="825" y="762" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-17" value="17: setEtat(nouvelEtat) [grille tampon t+1]" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="786" as="sourcePoint" />
+            <mxPoint x="1105" y="786" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-18" value="18: aEvolue (bool)" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="818" as="sourcePoint" />
+            <mxPoint x="555" y="818" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-19" value="19: sauvegarderDansFichier(&quot;&amp;lt;nom&amp;gt;_out/iteration_&amp;lt;i&amp;gt;.txt&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="866" as="sourcePoint" />
+            <mxPoint x="825" y="866" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ==================== MESSAGES BRANCHE GRAPHIQUE SFML ==================== -->
+        <mxCell id="msg-20" value="20: AfficheurGraphique(tailleCellule, delaiMs)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="942" as="sourcePoint" />
+            <mxPoint x="1940" y="942" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-21" value="21: lancer(jeu)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="976" as="sourcePoint" />
+            <mxPoint x="1940" y="976" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-22" value="22: événements clavier/fenêtre (Pause [Espace], Vitesse [Haut/Bas], Fermer)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="1042" as="sourcePoint" />
+            <mxPoint x="1940" y="1042" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-23" value="23: avancerIteration()" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1940" y="1098" as="sourcePoint" />
+            <mxPoint x="555" y="1098" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-24" value="24: actualiser(*m_regle) [même calcul polymorphique]" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#9673a6;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="1126" as="sourcePoint" />
+            <mxPoint x="825" y="1126" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-25" value="25: aEvolue (bool)" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="1152" as="sourcePoint" />
+            <mxPoint x="555" y="1152" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-25b" value="25b: aEvolue (si false → m_enPause = true)" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="1174" as="sourcePoint" />
+            <mxPoint x="1940" y="1174" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-26" value="26: getGrille() [puis lecture Cellule::estVivante()]" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1940" y="1210" as="sourcePoint" />
+            <mxPoint x="555" y="1210" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-27" value="27: const Grille&amp;amp;" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="1240" as="sourcePoint" />
+            <mxPoint x="1940" y="1240" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-28" value="28: afficher la grille SFML (window.display() + sf::sleep)" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1940" y="1272" as="sourcePoint" />
+            <mxPoint x="100" y="1272" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ==================== DESTRUCTION FINALE ==================== -->
+        <mxCell id="msg-29" value="29: ~Jeu() / ~Grille() [libération en cascade : ~Cellule() → delete m_etat]" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="1335" as="sourcePoint" />
+            <mxPoint x="555" y="1335" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg-30" value="30: delete regle" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="1368" as="sourcePoint" />
+            <mxPoint x="1395" y="1368" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
